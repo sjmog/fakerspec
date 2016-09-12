@@ -17,3 +17,21 @@ class TestDescribe < Test::Unit::TestCase
     end
   end
 end
+
+class TestAssertion < Test::Unit::TestCase
+  def test_it_can_pass
+    describe 'some passing assertion' do
+      it 'passes' do
+        expect(2).to eq 2
+      end
+    end
+  end
+
+  def test_it_can_fail
+    describe 'some passing negative assertion' do
+      it 'fails' do
+        expect(1).not_to eq 2
+      end
+    end
+  end
+end
